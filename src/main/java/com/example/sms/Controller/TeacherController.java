@@ -25,17 +25,17 @@ public class TeacherController {
     @Autowired
     TeacherService teacherService;
 
-    @PostMapping("/student")
+    @PostMapping("/teacher")
     private ResponseEntity<Teacher> save(@RequestBody TeacherDTO teacherDTO){
         return teacherService.saveTeacher(teacherDTO);
     }
 
-    @PutMapping("/student/{id}")
+    @PutMapping("/teacher/{id}")
     private ResponseEntity<Teacher> update(@NotNull @RequestBody TeacherDTO teacherDTO, @NotNull @PathVariable("id") long id){
         return teacherService.updateTeacher(id,teacherDTO);
     }
 
-    @GetMapping("/student/{id}")
+    @GetMapping("/teacher/{id}")
     private ResponseEntity<Teacher> getById(@NotNull @PathVariable("id") long id){
         return teacherService.getById(id);
     }
